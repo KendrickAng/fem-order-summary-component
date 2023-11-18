@@ -4,6 +4,7 @@
     --very-pale-blue: hsl(225, 100%, 98%);
     --desaturated-blue: hsl(224, 23%, 55%);
     --dark-blue: hsl(223, 47%, 23%);
+    --pale-purple: #766CF1;
     --rhd-500: 500 'Red Hat Display', sans-serif;
     --rhd-700: 700 'Red Hat Display', sans-serif;
     --rhd-900: 900 'Red Hat Display', sans-serif;
@@ -15,10 +16,14 @@
     padding: 0;
 }
 
+html {
+    background-color: var(--pale-blue);
+}
+
 body {
     background-image: url("./images/pattern-background-desktop.svg");
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: 0% -35%;
     background-size: contain;
     width: 100%;
 
@@ -55,6 +60,101 @@ body {
     background-color: #ffffff;
 }
 
+.card>h1 {
+    font: 900 1.75rem 'Red Hat Display', sans-serif;
+    text-align: center;
+}
+
+.card>p {
+    margin-top: 1rem;
+    font: 500 1rem/1.625rem 'Red Hat Display', sans-serif;
+    color: var(--desaturated-blue);
+    text-align: center;
+}
+
+.card>.plan {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-top: 1.25rem;
+    padding: 1.6rem;
+    background-color: var(--very-pale-blue);
+    border-radius: 0.625rem;
+}
+
+.card>.plan>img {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    width: 3rem;
+    height: 3rem;
+}
+
+.card>.plan>h1 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    font: 700 1rem 'Red Hat Display', sans-serif;
+}
+
+.card>.plan>p {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font: 500 1rem 'Red Hat Display', sans-serif;
+    color: var(--desaturated-blue);
+}
+
+.card>.plan>a {
+    grid-row: 1/3;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bright-blue);
+    font: 700 0.875rem 'Red Hat Display', sans-serif;
+    text-decoration: underline;
+}
+
+.card>.plan>a:hover {
+    cursor: pointer;
+    color: var(--pale-purple);
+    text-decoration: none;
+}
+
+.card>.pay {
+    display: block;
+    width: 100%;
+    background-color: var(--bright-blue);
+    color: white;
+    border-radius: 0.675rem;
+    padding: 1rem;
+    text-align: center;
+    font: 700 1rem 'Red Hat Display', sans-serif;
+    margin-top: 2rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+.card>.pay:hover {
+    cursor: pointer;
+    background-color: var(--pale-purple);
+}
+
+.card>.cancel {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: var(--desaturated-blue);
+    padding: 0;
+    text-align: center;
+    font: 700 1rem 'Red Hat Display', sans-serif;
+    margin-top: 2rem;
+    border: none;
+}
+
+.card>.cancel:hover{
+    cursor: pointer;
+    color: black;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -62,4 +162,32 @@ body {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 1440px) {
+    .card, .hero {
+        width: 20.5rem;
+    }
+
+    .hero {
+        height: 10rem;
+    }
+
+    .card {
+        height: 25.5rem;
+        padding: 2rem;
+    }
+
+    .card>h1{
+        font-size: 1.375rem;
+    }
+
+    .card>.plan{
+        height: 5rem;
+        padding: 1rem;
+    }
+
+    .card>.cancel {
+        margin-top: 1.5rem;
+    }
 }
