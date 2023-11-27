@@ -165,6 +165,11 @@ body {
 }
 
 @media screen and (max-width: 1440px) {
+    .container {
+        width: 20.5rem;
+        height: 35.5rem;
+    }
+    
     .card, .hero {
         width: 20.5rem;
     }
